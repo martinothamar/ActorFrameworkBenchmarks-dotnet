@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ActorFrameworkBenchmarks.ProtoActorBenchmarks-20190501-090407</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.11.5, OS=Windows 10.0.17134.706 (1803/April2018Update/Redstone4)
+Intel Core i7-7700HQ CPU 2.80GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cores
+.NET Core SDK=3.0.100-preview4-011223
+  [Host] : .NET Core 3.0.0-preview4-27615-11 (CoreCLR 4.6.27615.73, CoreFX 4.700.19.21213), 64bit RyuJIT
+</code></pre>
+<pre><code>Job=InProcess  Toolchain=InProcessEmitToolchain  
+</code></pre>
+
+<table>
+<thead><tr><th>  Method</th><th>Concurrency</th><th>  Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>ProtoActorPing</td><td>1</td><td>3.161 us</td><td>0.0395 us</td><td>0.0330 us</td><td>3.152 us</td><td>0.0687</td><td>-</td><td>-</td><td>1.13 KB</td>
+</tr><tr><td>ProtoActorPing</td><td>100</td><td>239.103 us</td><td>3.7115 us</td><td>3.2901 us</td><td>239.483 us</td><td>13.4277</td><td>0.2441</td><td>-</td><td>114.98 KB</td>
+</tr><tr><td>ProtoActorPing</td><td>1000</td><td>2,858.023 us</td><td>90.6350 us</td><td>267.2392 us</td><td>2,766.587 us</td><td>3.9063</td><td>-</td><td>-</td><td>1148.59 KB</td>
+</tr></tbody></table>
+</body>
+</html>
