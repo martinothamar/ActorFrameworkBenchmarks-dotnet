@@ -64,11 +64,22 @@ namespace ActorFrameworkBenchmarks
             _host.Start();
 
             var client = _host.Services.GetService<IClusterClient>();
-            _grain = client.GetGrain<IPingGrain>("1");
 
             if (Concurrency > 1)
             {
                 _grains = Enumerable.Range(0, Concurrency).Select(i => client.GetGrain<IPingGrain>(i.ToString())).ToArray();
+
+                var tasks = new Task[_grains.Length];
+                for (int i = 0; i < _grains.Length; i++)
+                    tasks[i] = _grains[i].Ping("ping");
+                Task.WhenAll(tasks).GetAwaiter().GetResult();
+            }
+            else
+            {
+                _grain = client.GetGrain<IPingGrain>("1");
+
+                // Force activate so that all calls are "hot"
+                _grain.Ping("ping").GetAwaiter().GetResult();
             }
         }
 

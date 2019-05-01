@@ -1,0 +1,78 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 6 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// ***** Done, took 00:00:00 (0.14 sec)   *****
+// Found 3 benchmarks:
+//   OrleansBenchmarks.OrleansPing: InProcess(Toolchain=InProcessEmitToolchain) [Concurrency=1]
+//   OrleansBenchmarks.OrleansPing: InProcess(Toolchain=InProcessEmitToolchain) [Concurrency=100]
+//   OrleansBenchmarks.OrleansPing: InProcess(Toolchain=InProcessEmitToolchain) [Concurrency=1000]
+
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)// **************************
+// Benchmark: OrleansBenchmarks.OrleansPing: InProcess(Toolchain=InProcessEmitToolchain) [Concurrency=1]
+// *** Execute ***
+// Launch: 1 / 1
+
+// Benchmark Process Environment Information:
+// Runtime=.NET Core 3.0.0-preview4-27615-11 (CoreCLR 4.6.27615.73, CoreFX 4.700.19.21213), 64bit RyuJIT
+// GC=Concurrent Server
+// Job: Job-JZKNME(Toolchain=InProcessEmitToolchain)
+
+OverheadJitting  1: 1 op, 248300.00 ns, 248.3000 us/op
+WorkloadJitting  1: 1 op, 2209500.00 ns, 2.2095 ms/op
+
+OverheadJitting  2: 16 op, 483100.00 ns, 30.1938 us/op
+WorkloadJitting  2: 16 op, 2576700.00 ns, 161.0437 us/op
+
+WorkloadPilot    1: 16 op, 2129400.00 ns, 133.0875 us/op
+WorkloadPilot    2: 32 op, 2726100.00 ns, 85.1906 us/op
+WorkloadPilot    3: 64 op, 5370200.00 ns, 83.9094 us/op
+WorkloadPilot    4: 128 op, 7546700.00 ns, 58.9586 us/op
+WorkloadPilot    5: 256 op, 6906500.00 ns, 26.9785 us/op
+WorkloadPilot    6: 512 op, 11183900.00 ns, 21.8436 us/op
+WorkloadPilot    7: 1024 op, 18613700.00 ns, 18.1774 us/op
+WorkloadPilot    8: 2048 op, 45417700.00 ns, 22.1766 us/op
+WorkloadPilot    9: 4096 op, 78186000.00 ns, 19.0884 us/op
+WorkloadPilot   10: 8192 op, 204606800.00 ns, 24.9764 us/op
+WorkloadPilot   11: 16384 op, 244358800.00 ns, 14.9145 us/op
+WorkloadPilot   12: 32768 op, 431044300.00 ns, 13.1544 us/op
+WorkloadPilot   13: 65536 op, 805705100.00 ns, 12.2941 us/op
+
+OverheadWarmup   1: 65536 op, 144000.00 ns, 2.1973 ns/op
+OverheadWarmup   2: 65536 op, 174800.00 ns, 2.6672 ns/op
+OverheadWarmup   3: 65536 op, 148100.00 ns, 2.2598 ns/op
+OverheadWarmup   4: 65536 op, 139200.00 ns, 2.1240 ns/op
+OverheadWarmup   5: 65536 op, 168100.00 ns, 2.5650 ns/op
+OverheadWarmup   6: 65536 op, 141600.00 ns, 2.1606 ns/op
+
+OverheadActual   1: 65536 op, 146000.00 ns, 2.2278 ns/op
+OverheadActual   2: 65536 op, 221000.00 ns, 3.3722 ns/op
+OverheadActual   3: 65536 op, 139800.00 ns, 2.1332 ns/op
+OverheadActual   4: 65536 op, 138900.00 ns, 2.1194 ns/op
+OverheadActual   5: 65536 op, 148200.00 ns, 2.2614 ns/op
+OverheadActual   6: 65536 op, 139300.00 ns, 2.1255 ns/op
+OverheadActual   7: 65536 op, 141200.00 ns, 2.1545 ns/op
+OverheadActual   8: 65536 op, 140500.00 ns, 2.1439 ns/op
+OverheadActual   9: 65536 op, 138800.00 ns, 2.1179 ns/op
+OverheadActual  10: 65536 op, 139200.00 ns, 2.1240 ns/op
+OverheadActual  11: 65536 op, 146700.00 ns, 2.2385 ns/op
+OverheadActual  12: 65536 op, 138900.00 ns, 2.1194 ns/op
+OverheadActual  13: 65536 op, 168600.00 ns, 2.5726 ns/op
+OverheadActual  14: 65536 op, 138900.00 ns, 2.1194 ns/op
+OverheadActual  15: 65536 op, 148000.00 ns, 2.2583 ns/op
+
+WorkloadWarmup   1: 65536 op, 839580500.00 ns, 12.8110 us/op
+WorkloadWarmup   2: 65536 op, 819100400.00 ns, 12.4985 us/op
+WorkloadWarmup   3: 65536 op, 909663000.00 ns, 13.8804 us/op
+WorkloadWarmup   4: 65536 op, 1084338800.00 ns, 16.5457 us/op
+WorkloadWarmup   5: 65536 op, 872690600.00 ns, 13.3162 us/op
+WorkloadWarmup   6: 65536 op, 852559000.00 ns, 13.0090 us/op
+WorkloadWarmup   7: 65536 op, 831728500.00 ns, 12.6912 us/op
+WorkloadWarmup   8: 65536 op, 819196000.00 ns, 12.4999 us/op
+WorkloadWarmup   9: 65536 op, 848947900.00 ns, 12.9539 us/op
+WorkloadWarmup  10: 65536 op, 880655000.00 ns, 13.4377 us/op
+WorkloadWarmup  11: 65536 op, 804175200.00 ns, 12.2707 us/op
+
+WorkloadActual   1: 65536 op, 801273200.00 ns, 12.2265 us/op
+WorkloadActual   2: 65536 op, 818074800.00 ns, 12.4828 us/op
+WorkloadActual   

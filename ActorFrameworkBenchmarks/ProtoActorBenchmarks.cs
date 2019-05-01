@@ -1,7 +1,6 @@
 ﻿using ActorFrameworkBenchmarks.ProtoActor;
 using BenchmarkDotNet.Attributes;
 using Proto;
-using Proto.Mailbox;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,14 +25,32 @@ namespace ActorFrameworkBenchmarks
         {
             _context = new RootContext();
 
-            _props = Props.FromProducer(() => new PingActor())
-                .WithMailbox(() => BoundedMailbox.Create(2048));
-            _actor = _context.Spawn(_props);
+            _props = Props.FromProducer(() => new PingActor());
             _timeout = TimeSpan.FromSeconds(5);
 
             if (Concurrency > 1)
             {
-                _actors = Enumerable.Range(0, Concurrency).Select(_ => _context.Spawn(_props)).ToArray();
+                _actors = Enumerable.Range(0, Concurrency).Select(i => _context.SpawnNamed(_props, i.ToString())).ToArray();
+            }
+            else
+            {
+                _actor = _context.SpawnNamed(_props, "1");
+            }
+        }
+
+        [GlobalCleanup]
+        public void Cleanup()
+        {
+            if (_actor != null)
+            {
+                _actor.Stop();
+                _actor = null;
+            }
+            if (_actors != null)
+            {
+                for (int i = 0; i < _actors.Length; i++)
+                    _actors[i].Stop();
+                _actors = null;
             }
         }
 
